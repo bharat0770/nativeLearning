@@ -56,38 +56,56 @@ const AnimeInfo = () => {
 
 
 
-            <View style={{
-                backgroundColor: "white", minHeight: 100, borderRadius: 10, marginTop: 16, shadowColor: "#000",
-                shadowOffset: { width: 0, height: 4 },
-                shadowOpacity: 0.3,
-                shadowRadius: 4,
-                elevation: 1
-            }}>
+            <View
+                // style={{
+                //     backgroundColor: "white", minHeight: 100, borderRadius: 10, marginTop: 16, shadowColor: "#000",
+                //     shadowOffset: { width: 0, height: 4 },
+                //     shadowOpacity: 0.3,
+                //     shadowRadius: 4,
+                //     elevation: 1
+                // }}
+                className="bg-white rounded-lg p-4 my-2 shadow-lg"
+            >
                 <View>
-                    <Text>{data.score}</Text>
-                    <TouchableOpacity
-                        onPress={() => Linking.openURL(`https://www.youtube.com/watch?v=${data?.trailer?.embed_url?.split('/')[4].split('?')[0]}`)}
-                    >
-                        <Text style={{ backgroundColor: "orange", color: "white", width: 100, padding: 8, borderRadius: 10 }}>Open YouTube</Text>
-                    </TouchableOpacity>
+                    <View className="flex flex-row justify-between ">
+                        <Text className="text-[18px] font-bold">{data.score}</Text>
+                        <TouchableOpacity
+                            onPress={() => Linking.openURL(`https://www.youtube.com/watch?v=${data?.trailer?.embed_url?.split('/')[4].split('?')[0]}`)}
+                        >
+                            <Text style={{ backgroundColor: "orange", color: "white", width: 100, padding: 8, borderRadius: 10 }}>Open YouTube</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View className="my-1 flex flex-col gap-2 bg-gray-50 p-4 rounded-lg">
+                        <Text className="text-gray-700 text-[16px] capitalize "><Text className="text-gray-500">duration :</Text> {data?.duration}</Text>
+                        <Text className="text-gray-700 text-[16px] capitalize "><Text className="text-gray-500">rating :</Text> {data?.rating}</Text>
+                        <Text className="text-gray-700 text-[16px] capitalize "><Text className="text-gray-500">score :</Text> {data?.score}</Text>
+                        <Text className="text-gray-700 text-[16px] capitalize "><Text className="text-gray-500">scored_by :</Text> {data?.scored_by}</Text>
+                        <Text className="text-gray-700 text-[16px] capitalize "><Text className="text-gray-500">rank :</Text> {data?.rank}</Text>
+                    </View>
+                    <View className="my-1 flex  bg-gray-50 rounded-lg p-4">
+                        <Text className="text-gray-700"><Text className="text-gray-500">popularity :</Text> {data?.popularity}</Text>
+                        <Text className="text-gray-700"><Text className="text-gray-500">members :</Text> {data?.members}</Text>
+                        <Text className="text-gray-700"><Text className="text-gray-500">favorites :</Text> {data?.favorites}</Text>
+                        <Text className="text-gray-700"><Text className="text-gray-500">background :</Text> {data?.background}</Text>
+                    </View>
+                    <View className="my-1 flex  bg-gray-50 rounded-lg p-4">
+                        <Text>season : {data?.season}</Text>
+                        <Text>year : {data?.year}</Text>
+                        <Text>type : {data?.type}</Text>
+                        <Text>source : {data?.source}</Text>
+                        <Text>episodes : {data?.episodes}</Text>
+                    </View>
+                    <View className="my-1 flex  bg-gray-50 rounded-lg p-4">
+                        <Text>status : {data?.status}</Text>
+                        <Text>airing : {data?.airing}</Text>
+                        <Text>aried :{data?.aired?.string}</Text>
+                    </View>
+                    <View className="my-1 flex  bg-gray-50 rounded-lg p-4">
+                        <Text>status : {data?.status}</Text>
+                        <Text>airing : {data?.airing}</Text>
+                        <Text>aried :{data?.aired?.string}</Text>
+                    </View>
 
-                    <Text>duration : {data?.duration}</Text>
-                    <Text>rating : {data?.rating}</Text>
-                    <Text>score : {data?.score}</Text>
-                    <Text>scored_by : {data?.scored_by}</Text>
-                    <Text>rank : {data?.rank}</Text>
-                    <Text>popularity : {data?.popularity}</Text>
-                    <Text>members : {data?.members}</Text>
-                    <Text>favorites : {data?.favorites}</Text>
-                    <Text>background : {data?.background}</Text>
-                    <Text>season : {data?.season}</Text>
-                    <Text>year : {data?.year}</Text>
-                    <Text>type : {data?.type}</Text>
-                    <Text>source : {data?.source}</Text>
-                    <Text>episodes : {data?.episodes}</Text>
-                    <Text>status : {data?.status}</Text>
-                    <Text>airing : {data?.airing}</Text>
-                    <Text>aried :{data?.aired?.string}</Text>
                 </View>
             </View>
         </ScrollView>

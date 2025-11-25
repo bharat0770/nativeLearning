@@ -188,21 +188,23 @@ const AnimeCard = ({ data, navigation }) => {
         //     }
         //   ]
         // },
-        <TouchableOpacity style={{
-            flex: 1,
-            flexDirection: "row",
-            alignItems: "flex-start",
-            justifyContent: "space-between",
-            backgroundColor: "#fff",
-            padding: 12,
-            borderRadius: 10,
-            marginBottom: 12,
-            gap: 20
+        <TouchableOpacity 
+        // style={{
+        //     flex: 1,
+        //     flexDirection: "row",
+        //     alignItems: "flex-start",
+        //     justifyContent: "space-between",
+        //     backgroundColor: "#fff",
+        //     padding: 12,
+        //     borderRadius: 10,
+        //     marginBottom: 12,
+        //     gap: 20
 
-        }}
+        // }}
+        className="flex bg-white shadow-lg m-2 flex-row justify-evenly items-start rounded-lg p-2"
             onPress={() => {
                 console.log("navigate to page")
-                return navigation.navigate("AnimeInfo", { data : data })
+                return navigation.navigate("AnimeInfo", { data: data })
             }}
         >
             <Image
@@ -220,7 +222,7 @@ const AnimeCard = ({ data, navigation }) => {
                     {data?.title_english}
                 </Text>
                 <Text style={{ fontsize: 14, color: "gray" }}>
-                    {data?.synopsis.split(' ').slice(1,20).join(' ')}
+                    {data?.synopsis.split(' ').slice(1, 20).join(' ')}
                 </Text>
             </View>
             <Text style={{ textAlign: "center", borderRadius: 4, color: "white", backgroundColor: "orange", padding: 1, fontSize: 14, width: "10%" }}>
@@ -250,6 +252,9 @@ const HomeScreen = () => {
     }, [])
     return animeList?.length > 0 && (
         <View>
+            <View className="flex-1 items-center justify-center bg-blue-500 ">
+                <Text className="text-white text-xl p-8">Hello</Text>
+            </View>
             <TopBar />
             <ScrollView>
                 {/* <AnimeCard navigation={navigation} /> */}
