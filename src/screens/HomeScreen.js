@@ -1,8 +1,16 @@
 import { useNavigation } from "@react-navigation/native";
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+// import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, ScrollView, StyleSheet,  TouchableOpacity,  View, Text} from "react-native";
+
 import TopBar from "../navigation/TopBar";
 import { useEffect, useState } from "react";
 import axios from "axios";
+
+
+
+
+
+
 const AnimeCard = ({ data, navigation }) => {
     // <Text>{anime.title}</Text>
     return (
@@ -188,20 +196,20 @@ const AnimeCard = ({ data, navigation }) => {
         //     }
         //   ]
         // },
-        <TouchableOpacity 
-        // style={{
-        //     flex: 1,
-        //     flexDirection: "row",
-        //     alignItems: "flex-start",
-        //     justifyContent: "space-between",
-        //     backgroundColor: "#fff",
-        //     padding: 12,
-        //     borderRadius: 10,
-        //     marginBottom: 12,
-        //     gap: 20
+        <TouchableOpacity
+            // style={{
+            //     flex: 1,
+            //     flexDirection: "row",
+            //     alignItems: "flex-start",
+            //     justifyContent: "space-between",
+            //     backgroundColor: "#fff",
+            //     padding: 12,
+            //     borderRadius: 10,
+            //     marginBottom: 12,
+            //     gap: 20
 
-        // }}
-        className="flex bg-white shadow-lg m-2 flex-row justify-evenly items-start rounded-lg p-2"
+            // }}
+            className="flex bg-white shadow-lg m-2 flex-row justify-evenly items-start rounded-lg p-2"
             onPress={() => {
                 console.log("navigate to page")
                 return navigation.navigate("AnimeInfo", { data: data })
@@ -254,6 +262,10 @@ const HomeScreen = () => {
         <View>
             <View className="flex-1 items-center justify-center bg-blue-500 ">
                 <Text className="text-white text-xl p-8">Hello</Text>
+                
+                <View >
+                    <Text color="$color">Hello</Text>
+                </View>
             </View>
             <TopBar />
             <ScrollView>
